@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose')
+const ObjectId = mongoose.Types.ObjectId
 const Product = require("../models/Product");
 const app = express();
 
@@ -67,6 +68,7 @@ const update = async (req, res) => {
   } catch (error) {
     //console.log(error)
     res.status(400).send(error.errors);
+    console.log(error)
   }
 };
 
